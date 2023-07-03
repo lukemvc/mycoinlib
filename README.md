@@ -2,7 +2,7 @@
 
 ## Overview
 
-MyCoinLib is a Python package for generating unique BTC, LTC, and ETH wallet/private-key pairs for customer orders, along with other related functions.
+A Python package for generating unique BTC, LTC, and ETH wallet/private-key pairs for customer orders, along with other related functions.
 
 ## Installation
 ```python
