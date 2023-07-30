@@ -3,7 +3,6 @@ import blockcypher
 import requests
 
 class BTC:
-    # Create a new BTC wallet
     def create_wallet():
         key = HDKey(network='bitcoin')
         private_key = key.wif()
@@ -18,7 +17,6 @@ class BTC:
         return info
 
 
-    # retrieve current BTC price
     def current_price():
         url = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd"
         try:
@@ -31,7 +29,6 @@ class BTC:
             raise APIException("Failed to retrieve BTC price from the API.") from e
 
 
-    # convert USD to BTC
     def usd_to_crypto(amount: float):
         try:
             current_price = BTC.current_price()
