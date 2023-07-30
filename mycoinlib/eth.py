@@ -5,7 +5,6 @@ from eth_keys import keys
 from eth_utils import decode_hex
 
 class ETH:
-    # Create a new ETH wallet
     def create_wallet():
         account = Account.create()
         private_key = account._private_key.hex()
@@ -23,8 +22,6 @@ class ETH:
         return info
 
 
-    # retrieve current ETH price
-    @staticmethod
     def current_price():
         url = "https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd"
         try:
@@ -38,8 +35,7 @@ class ETH:
             raise APIException("Failed to retrieve ETH price from the API.") from e
 
 
-    # convert USD to ETH
-    @staticmethod
+
     def usd_to_crypto(amount: float):
         try:
             current_price = ETH.current_price()
@@ -50,7 +46,6 @@ class ETH:
             raise APIException("Failed to convert USD to ETH.") from e
 
 
-    # get confirmed ETH balance
     def get_confirmed_balance(wallet: str):
         url = f"https://api.blockcypher.com/v1/eth/main/addrs/{wallet}/balance"
         try:
